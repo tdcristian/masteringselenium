@@ -1,4 +1,4 @@
-package masteringselenium.config;
+package com.masteringselenium.config;
 
 import java.util.HashMap;
 

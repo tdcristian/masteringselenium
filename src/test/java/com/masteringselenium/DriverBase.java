@@ -1,4 +1,4 @@
-package masteringselenium;
+package com.masteringselenium;
 
 import java.util.ArrayList;
 import java.util.Collections;

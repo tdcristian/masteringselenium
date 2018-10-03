@@ -1,4 +1,4 @@
-package masteringselenium;
+package com.masteringselenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +30,7 @@ public class BasicIT extends DriverBase {
     }
 
     private void googleExampleThatSearchesFor(String searchString) {
-        WebDriver driver = DriverBase.getDriver();
+        WebDriver driver = getDriver();
         driver.get("http://www.google.com");
 
         WebElement searchField = driver.findElement(By.name("q"));
