@@ -25,6 +25,10 @@
         <threads>1</threads>
         <browser>firefox</browser>
         <headless>true</headless>
+        <remote>false</remote>
+        <seleniumGridURL></seleniumGridURL>
+        <platform></platform>
+        <browserVersion></browserVersion>
     </properties>
 
     <profiles>
@@ -54,6 +58,11 @@
                             <systemPropertyVariables>
                                 <browser>${browser}</browser>
                                 <headless>${headless}</headless>
+
+                                <remoteDriver>${remote}</remoteDriver>
+                                <gridURL>${seleniumGridURL}</gridURL>
+                                <desiredPlatform>${platform}</desiredPlatform>
+                                <desiredBrowserVersion>${browserVersion}</desiredBrowserVersion>
                             </systemPropertyVariables>
                         </configuration>
                         <executions>

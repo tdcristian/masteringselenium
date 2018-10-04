@@ -4,8 +4,6 @@ import java.util.HashMap;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -31,14 +29,6 @@ public enum DriverType implements DriverSetup {
             options.addArguments("--no-default-browser-check");
             options.setExperimentalOption("prefs", chromePreferences);
             return new ChromeDriver(options);
-        }
-    },
-    EDGE {
-        public RemoteWebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            EdgeOptions options = new EdgeOptions();
-            options.merge(capabilities);
-            
-            return new EdgeDriver(options);
         }
     };
 
