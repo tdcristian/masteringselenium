@@ -26,8 +26,8 @@
         <browser>firefox</browser>
         <headless>true</headless>
         <remote>false</remote>
-        <seleniumGridURL></seleniumGridURL>
-        <platform></platform>
+        <seleniumGridURL>http://192.168.198.6:4444/wd/hub</seleniumGridURL>
+        <platform>WIN10</platform>
         <browserVersion></browserVersion>
     </properties>
 

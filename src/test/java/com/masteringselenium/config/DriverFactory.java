@@ -18,8 +18,10 @@ public class DriverFactory {
     private final String systemArchitecture = System.getProperty("os.arch");
 
     private final boolean useRemoteWebDriver = Boolean.getBoolean("remoteDriver");
-    
+
     private final boolean headless = Boolean.getBoolean("headless");
+
+    private final String threads = System.getProperty("threadCount");
 
     public DriverFactory() {
         DriverType driverType = DriverType.FIREFOX;
@@ -35,7 +37,7 @@ public class DriverFactory {
         selectedDriverType = driverType;
     }
 
-    public RemoteWebDriver getDriver()  {
+    public RemoteWebDriver getDriver() {
         if (webDriver == null) {
             try {
                 instantiateNewDriver(selectedDriverType);
@@ -47,11 +49,13 @@ public class DriverFactory {
     }
 
     private void instantiateNewDriver(DriverType driverType) throws MalformedURLException {
+        
+        
         System.out.println(" ");
         System.out.println("Local operating system: " + operatingSystem);
         System.out.println("Local architecture: " + systemArchitecture);
         System.out.println("Selected browser: " + selectedDriverType);
-        System.out.println("Running headless: "+headless);
+        System.out.println("Running headless: " + headless);
         System.out.println("Connecting to Selenium Grid: " + useRemoteWebDriver);
         System.out.println(" ");
 
@@ -68,9 +72,9 @@ public class DriverFactory {
             if (desiredBrowserVersion != null && !desiredBrowserVersion.isEmpty()) {
                 desiredCapabilities.setVersion(desiredBrowserVersion);
             }
-            desiredCapabilities.setBrowserName(selectedDriverType.toString());
+            desiredCapabilities.setBrowserName(selectedDriverType.toString().toLowerCase());
+            desiredCapabilities.setCapability("platformName", "windows");
             webDriver = new RemoteWebDriver(seleniumGridURL, desiredCapabilities);
-
         } else {
             webDriver = driverType.getWebDriverObject(desiredCapabilities);
         }
