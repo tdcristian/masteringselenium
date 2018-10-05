@@ -29,6 +29,7 @@
         <seleniumGridURL>http://192.168.198.6:4444/wd/hub</seleniumGridURL>
         <platform>WIN10</platform>
         <browserVersion></browserVersion>
+        <screenshotDirectory>${project.build.directory}/screenshots</screenshotDirectory>
     </properties>
 
     <profiles>
@@ -63,6 +64,8 @@
                                 <gridURL>${seleniumGridURL}</gridURL>
                                 <desiredPlatform>${platform}</desiredPlatform>
                                 <desiredBrowserVersion>${browserVersion}</desiredBrowserVersion>
+                                
+                                <screenshotDirectory>${screenshotDirectory}</screenshotDirectory>
                             </systemPropertyVariables>
                         </configuration>
                         <executions>

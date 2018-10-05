@@ -28,6 +28,16 @@ public class BasicIT extends DriverBase {
     public void googleApplesExample() {
         googleExampleThatSearchesFor("Apples!");
     }
+    
+//    @Test
+//    public void googlePrintScreenExample() {
+//        WebDriver driver = getDriver();
+//        driver.get("http://www.google.com");
+//        WebElement field = driver.findElement(By.name("q"));
+//        field.sendKeys("test screenshot!!!");
+//        
+//        WebElement searchField = driver.findElement(By.name("qqq"));
+//    }
 
     private void googleExampleThatSearchesFor(String searchString) {
         WebDriver driver = getDriver();
