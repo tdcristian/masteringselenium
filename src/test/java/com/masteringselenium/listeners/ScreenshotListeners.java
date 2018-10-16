@@ -14,7 +14,9 @@ import org.testng.TestListenerAdapter;
 import com.masteringselenium.DriverBase;
 
 public class ScreenshotListeners extends TestListenerAdapter {
-
+/*
+ Element driver = getDriver(); must be added inside all @Test to create proper screenshot
+ */
     private boolean createFile(File screenshot) {
         boolean fileCreated = false;
         if (screenshot.exists()) {
