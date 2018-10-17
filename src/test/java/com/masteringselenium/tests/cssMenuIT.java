@@ -87,13 +87,14 @@ public class cssMenuIT extends DriverBase {
     }
     
     @Test
+    @Ignore
     public void automateJavaScriptDragAndDropWithOffsetsStep2() {
         
         driver = getDriver();
         driver.get("http://web.masteringselenium.com/jsDragAndDropWithHandle.html");
 
         Actions advancedActions = new Actions(driver);
-        final By destroyableBoxes = By.cssSelector("ul > li > diva");
+        final By destroyableBoxes = By.cssSelector("ul > li > div");
         WebElement obliterator = driver.findElement(By.id("obliterate"));
 
         WebElement firstBox = driver.findElement(By.id("one"));
