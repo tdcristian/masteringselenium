@@ -109,5 +109,34 @@ public class cssMenuIT extends DriverBase {
 
         Assertions.assertThat(driver.findElements(destroyableBoxes).size()).isEqualTo(4);
     }
+    
+    @Test
+    @Ignore
+    public void automateJavaScriptDragAndDropWithOffsetsStep4() {
+        driver = getDriver();
+        driver.get("http://web.masteringselenium.com/jsDragAndDropWithHandle.html");
+        
+        Actions advancedActions = new Actions(driver);
+        final By destroyableBoxes = By.cssSelector("ul > li > div");
+        
+        WebElement obliterator = driver.findElement(By.id("obliterate"));
+        WebElement firstBox = driver.findElement(By.id("one"));
+        WebElement firstBoxText = driver.findElement(By.cssSelector("#one > span"));
+        
+        Assertions.assertThat(driver.findElements(destroyableBoxes).size()).isEqualTo(5);
+        
+        CalculateOffsetPosition op = new CalculateOffsetPosition(firstBox,firstBoxText,
+                CalculateOffsetPosition.CursorPosition.CENTER);
+        
+        advancedActions.moveToElement(firstBox)
+                .moveByOffset(op.getxOffset(),op.getyOffset())
+                .clickAndHold()
+                .moveToElement(obliterator)
+                .release()
+                .perform();
+        
+        Assertions.assertThat(driver.findElements(destroyableBoxes).size()).isEqualTo(4);
+    }
+    
 
 }
