@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import com.masteringselenium.DriverBase;
@@ -27,6 +28,7 @@ public class AccessKeyIT extends DriverBase {
     }
 
     @Test
+    @Ignore
     public void testThatUsingAccessKeysWorks() {
         driver = getDriver();
         driver.get("http://web.masteringselenium.com/accessKeysHome.html");
