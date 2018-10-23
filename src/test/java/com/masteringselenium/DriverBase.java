@@ -12,6 +12,7 @@ import org.testng.annotations.Listeners;
 
 import com.masteringselenium.config.DriverFactory;
 import com.masteringselenium.listeners.ScreenshotListeners;
+import net.lightbody.bmp.BrowserMobProxy;
 
 @Listeners(ScreenshotListeners.class)
 public class DriverBase {
@@ -35,6 +36,14 @@ public class DriverBase {
     
     public static RemoteWebDriver getDriver() {
         return driverThread.get().getDriver();
+    }
+
+    public static BrowserMobProxy getBrowserMobProxy() {
+        return driverThread.get().getBrowserMobProxy();
+    }
+    
+    public static RemoteWebDriver getBrowserMobProxyEnabledDriver() {
+        return driverThread.get().getDriver(true);
     }
     
     @AfterMethod(alwaysRun = true)

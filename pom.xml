@@ -32,6 +32,9 @@
         <platform>WIN10</platform>
         <browserVersion></browserVersion>
         <screenshotDirectory>${project.build.directory}/screenshots</screenshotDirectory>
+        <proxyEnabled>false</proxyEnabled>
+        <proxyHost/>
+        <proxyPort/>
     </properties>
 
     <profiles>
@@ -68,6 +71,10 @@
                                 <desiredBrowserVersion>${browserVersion}</desiredBrowserVersion>
                                 
                                 <screenshotDirectory>${screenshotDirectory}</screenshotDirectory>
+
+                                <proxyEnabled>${proxyEnabled}</proxyEnabled>
+                                <proxyHost>${proxyHost}</proxyHost>
+                                <proxyPort>${proxyPort}</proxyPort>
                             </systemPropertyVariables>
                         </configuration>
                         <executions>
@@ -126,7 +133,11 @@
             <version>${httpclient.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>net.lightbody.bmp</groupId>
+            <artifactId>browsermob-core</artifactId>
+            <version>2.1.5</version>
+        </dependency>
     </dependencies>
 
 </project>
