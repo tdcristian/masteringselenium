@@ -128,7 +128,7 @@ public class DriverFactory {
                 desiredCapabilities.setVersion(desiredBrowserVersion);
             }
             desiredCapabilities.setBrowserName(selectedDriverType.toString().toLowerCase());
-            desiredCapabilities.setCapability("platformName", "windows");
+            desiredCapabilities.setCapability("platformName", "linux");
             webDriver = new RemoteWebDriver(seleniumGridURL, desiredCapabilities);
         } else {
             webDriver = driverType.getWebDriverObject(desiredCapabilities);

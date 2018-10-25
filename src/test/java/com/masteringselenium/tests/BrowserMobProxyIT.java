@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import com.masteringselenium.DriverBase;
@@ -19,11 +20,13 @@ public class BrowserMobProxyIT extends DriverBase {
 
     @BeforeMethod
     public void setup() throws MalformedURLException {
-        driver = getBrowserMobProxyEnabledDriver();
+//        driver = getBrowserMobProxyEnabledDriver();
     }
 
     @Test
+    @Ignore
     public void usingAProxyToTrackNetworkTrafficStep2() {
+        driver = getBrowserMobProxyEnabledDriver();
         getBrowserMobProxy().newHar();
         driver.get("https://www.google.co.uk");
 

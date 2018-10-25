@@ -13,25 +13,21 @@ import org.testng.annotations.Test;
 public class BasicIT extends DriverBase {
 
     @Test
-    @Ignore
     public void googleCheeseExample() {
         googleExampleThatSearchesFor("Cheese!");
     }
 
     @Test
-    @Ignore
     public void googleMilkExample() {
         googleExampleThatSearchesFor("Milk!");
     }
 
     @Test
-    @Ignore
     public void googleBananaExample() {
         googleExampleThatSearchesFor("Banana!");
     }
 
     @Test
-    @Ignore
     public void googleApplesExample() {
         googleExampleThatSearchesFor("Apples!");
     }
